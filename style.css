@@ -1,0 +1,90 @@
+body {
+    font-family: 'Roboto', Helvetica, sans-serif;
+    background-color: antiquewhite;
+    line-height: 1.6;
+    color: #333;
+}
+@font-face {
+    font-family: 'Roboto';
+    src: url('fonts/Roboto-Medium.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+h1 {
+    text-align: center;
+    color: #3c4e67;
+    margin-top: 20px;
+    font-size: 2.5rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+
+span {
+    display: block;
+    color: #718093;
+    font-size: 1.2rem;
+    margin-top: 10px;
+    font-style: italic;
+}
+
+ p {
+    margin: 20px;
+    font-size: 1rem;
+    color: #4b4b4b;
+    line-height: 1.8;
+}
+
+a {
+    color: #0984e3;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+a:hover {
+    text-decoration: underline;
+    color: #74b9ff;
+}
+
+a:active {
+    color: #d63031;
+}
+
+ol {
+    margin: 20px;
+    padding-left: 40px;
+    list-style: none;
+    counter-reset: custom-counter;
+}
+
+ol > li {
+    margin-bottom: 10px;
+    font-size: 1rem;
+    counter-increment: custom-counter;
+    position: relative;
+}
+
+ol > li::before {
+    content: counter(custom-counter) ". ";
+    color: #0984e3;
+    font-weight: bold;
+    position: absolute;
+    left: -25px;
+}
+
+
+img {
+    display: block;
+    max-width: 90%;
+    margin: 30px auto;
+    border: 10px dotted #dfe6e9;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+img:hover {
+    transform: scale(1.05);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
