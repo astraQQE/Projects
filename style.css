@@ -1,54 +1,41 @@
+/* Flexbox контейнер */
 body {
-    font-family: 'Roboto', Helvetica, sans-serif;
-    background-color: antiquewhite;
+    display: flex;
+    flex-direction: column; /* Главная ось вертикальная */
+    align-items: center; /* Выравнивание по поперечной оси (по центру) */
+    justify-content: space-between; /* Равномерное распределение элементов по главной оси */
+    background-color: #f0e68c; /* Цвет фона (HEX) */
+    font-family: 'Roboto', sans-serif;
     line-height: 1.6;
-    color: #333;
-}
-@font-face {
-    font-family: 'Roboto';
-    src: url('fonts/Roboto-Medium.ttf') format('truetype');
-    font-weight: normal;
-    font-style: normal;
+    color: hsl(0, 0%, 20%); /* Цвет текста (HSL) */
 }
 
+/* Flex-элементы */
 h1 {
-    text-align: center;
-    color: #3c4e67;
+    text-align: left;
+    color: rgba(60, 78, 103, 0.8); /* Цвет текста (RGBA) */
     margin-top: 20px;
     font-size: 2.5rem;
     text-transform: uppercase;
     letter-spacing: 2px;
 }
 
-
-span {
-    display: block;
-    color: #718093;
-    font-size: 1.2rem;
-    margin-top: 10px;
-    font-style: italic;
-}
-
- p {
+p {
     margin: 20px;
     font-size: 1rem;
-    color: #4b4b4b;
+    color: #4b4b4b; /* Цвет текста (HEX) */
     line-height: 1.8;
+    flex-grow: 1; /* Элемент занимает доступное пространство */
 }
 
-a {
-    color: #0984e3;
-    text-decoration: none;
-    transition: color 0.3s ease;
-}
-
-a:hover {
-    text-decoration: underline;
-    color: #74b9ff;
-}
-
-a:active {
-    color: #d63031;
+img {
+    max-width: 50%; /* Относительная единица */
+    margin: 30px auto;
+    border: 10px dotted #000000;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    align-self: flex-start; /* Выравнивание по поперечной оси */
 }
 
 ol {
@@ -56,6 +43,9 @@ ol {
     padding-left: 40px;
     list-style: none;
     counter-reset: custom-counter;
+    display: flex;
+    flex-direction: column; /* Вертикальное расположение элементов */
+    align-items: flex-start; /* Выравнивание по поперечной оси */
 }
 
 ol > li {
@@ -63,6 +53,7 @@ ol > li {
     font-size: 1rem;
     counter-increment: custom-counter;
     position: relative;
+    flex-basis: 10%; /* Базовый размер элемента */
 }
 
 ol > li::before {
@@ -73,18 +64,24 @@ ol > li::before {
     left: -25px;
 }
 
-
-img {
-    display: block;
-    max-width: 90%;
-    margin: 30px auto;
-    border: 10px dotted #dfe6e9;
-    border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+/* Цвета разными способами */
+.bold-text {
+    color: rgb(113, 128, 147); /* Цвет текста (RGB) */
+    font-size: 1.2rem;
+    margin-top: 10px;
+    font-style: italic;
 }
 
-img:hover {
-    transform: scale(1.05);
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+.overlay-text {
+    background-color: hsla(0, 0%, 100%, 0.8); /* Цвет фона (HSLA) */
+    padding: 10px;
+    z-index: 3;
+}
+
+/* Относительные пути */
+@font-face {
+    font-family: 'Roboto';
+    src: url('fonts/Roboto-Medium.ttf') format('truetype'); /* Относительный путь */
+    font-weight: normal;
+    font-style: normal;
 }
