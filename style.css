@@ -1,41 +1,45 @@
 /* Flexbox контейнер */
 body {
     display: flex;
-    flex-direction: column; /* Главная ось вертикальная */
-    align-items: center; /* Выравнивание по поперечной оси (по центру) */
-    justify-content: space-between; /* Равномерное распределение элементов по главной оси */
-    background-color: #f0e68c; /* Цвет фона (HEX) */
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #f0e68c;
     font-family: 'Roboto', sans-serif;
     line-height: 1.6;
-    color: hsl(0, 0%, 20%); /* Цвет текста (HSL) */
+    color: hsl(0, 0%, 20%);
+    height: 150vh;
+    padding: 20px;
 }
 
 /* Flex-элементы */
 h1 {
     text-align: left;
-    color: rgba(60, 78, 103, 0.8); /* Цвет текста (RGBA) */
+    color: rgba(60, 78, 103, 0.8);
     margin-top: 20px;
     font-size: 2.5rem;
     text-transform: uppercase;
     letter-spacing: 2px;
+    border: 2px solid red;
 }
 
 p {
     margin: 20px;
     font-size: 1rem;
-    color: #4b4b4b; /* Цвет текста (HEX) */
+    color: #4b4b4b; 
     line-height: 1.8;
-    flex-grow: 1; /* Элемент занимает доступное пространство */
+    border: 2px solid blue;
 }
 
 img {
-    max-width: 50%; /* Относительная единица */
-    margin: 30px auto;
+    max-width: 50%;
+    margin: 30px;
     border: 10px dotted #000000;
     border-radius: 8px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
-    align-self: flex-start; /* Выравнивание по поперечной оси */
+    align-self: flex-start;
+    border: 2px solid green;
 }
 
 ol {
@@ -44,8 +48,9 @@ ol {
     list-style: none;
     counter-reset: custom-counter;
     display: flex;
-    flex-direction: column; /* Вертикальное расположение элементов */
-    align-items: flex-start; /* Выравнивание по поперечной оси */
+    flex-direction: column;
+    align-items: flex-end;
+    border: 2px solid purple;
 }
 
 ol > li {
@@ -53,7 +58,7 @@ ol > li {
     font-size: 1rem;
     counter-increment: custom-counter;
     position: relative;
-    flex-basis: 10%; /* Базовый размер элемента */
+    flex-basis: 10%;
 }
 
 ol > li::before {
@@ -64,91 +69,46 @@ ol > li::before {
     left: -25px;
 }
 
-/* Цвета разными способами */
+
 .bold-text {
-    color: rgb(113, 128, 147); /* Цвет текста (RGB) */
+    color: rgb(113, 128, 147);
     font-size: 1.2rem;
     margin-top: 10px;
     font-style: italic;
 }
 
 .overlay-text {
-    background-color: hsla(0, 0%, 100%, 0.8); /* Цвет фона (HSLA) */
+    background-color: hsla(0, 0%, 100%, 0.8); 
     padding: 10px;
     z-index: 3;
 }
 
-/* Относительные пути */
+
 @font-face {
     font-family: 'Roboto';
-    src: url('fonts/Roboto-Medium.ttf') format('truetype'); /* Относительный путь */
+    src: url('fonts/Roboto-Medium.ttf') format('truetype');
     font-weight: normal;
     font-style: normal;
 }
-
-form {
-    max-width: 600px;
-    margin: 0 auto;
-    padding: 20px;
-    border: 1px solid #ccc;
-    border-radius: 10px;
-    background-color: #f9f9f9;
-}
-
-fieldset {
-    margin-bottom: 20px;
-    border: none;
-}
-
-legend {
-    font-size: 1.2rem;
-    font-weight: bold;
-    margin-bottom: 10px;
-}
-
-label {
-    display: block;
-    margin-bottom: 5px;
-}
-
-input, select {
+.flex-grow-example {
+    display: flex;
     width: 100%;
+    border: 2px solid black; 
+    margin-top: 20px;
+}
+
+.flex-grow-example .item {
     padding: 10px;
-    margin-bottom: 15px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
+    border: 1px solid red; 
+}
+.flex-grow-example .item1 {
+    flex-grow: 1; 
 }
 
-button {
-    display: inline-flex;
-    align-items: center;
-    padding: 10px 20px;
-    border: none;
-    border-radius: 5px;
-    background-color: #007bff;
-    color: white;
-    cursor: pointer;
+.flex-grow-example .item2 {
+    flex-grow: 2; 
 }
 
-button img {
-    margin-left: 10px;
-    width: 20px;
-    height: 20px;
-}
-
-button:hover {
-    background-color: #0056b3;
-}
-
-button:active {
-    background-color: #004080;
-}
-
-footer {
-    position: fixed;
-    bottom: 0;
-    width: 100%;
-    text-align: center;
-    background-color: #f1f1f1;
-    padding: 10px 0;
+.flex-grow-example .item3 {
+    flex-grow: 1; 
 }
