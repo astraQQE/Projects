@@ -9,7 +9,6 @@ body {
     color: hsl(0, 0%, 20%);
 }
 
-
 h1, h2 {
     text-align: left;
     color: rgba(60, 78, 103, 0.8);
@@ -19,7 +18,6 @@ h1, h2 {
     letter-spacing: 2px;
 }
 
-
 p {
     margin: 20px;
     font-size: 1rem;
@@ -27,7 +25,6 @@ p {
     line-height: 1.8;
     flex-grow: 1;
 }
-
 
 img {
     max-width: 50%;
@@ -64,7 +61,6 @@ ol > li::before {
     position: absolute;
     left: -25px;
 }
-
 
 .bold-text {
     color: rgb(113, 128, 147);
@@ -116,6 +112,9 @@ input, select {
     margin-bottom: 15px;
     border: 1px solid #ccc;
     border-radius: 5px;
+    background-color: #f0f0f0; /* Светло-серый фон */
+    color: #333; /* Темно-серый текст */
+    font-size: 1rem;
 }
 
 .radio-group {
@@ -151,11 +150,64 @@ button:active {
     background-color: #004080;
 }
 
+button:focus {
+    outline: 2px solid #007bff; 
+}
+
 footer {
-    position: fixed;
     bottom: 0;
     width: 100%;
     text-align: center;
     background-color: #f1f1f1;
     padding: 1px 0;
+}
+
+
+
+::selection {
+    background-color: #ffcc00;
+    color: #000; 
+}
+
+a:link {
+    color: #007bff; 
+}
+
+a:visited {
+    color: #6c757d; 
+}
+
+a:hover {
+    color: #0056b3;
+    text-decoration: underline;
+}
+
+a:active {
+    color: #004080;
+}
+
+a:focus {
+    outline: 2px solid #007bff;
+}
+
+::placeholder {
+    color: #999;
+    font-style: italic;
+}
+
+input[type="radio"]:checked + label,
+input[type="checkbox"]:checked + label {
+    text-decoration: line-through;
+    color: #6c757d;
+}
+
+input:required, select:required {
+    border-color: #ff0000; 
+}
+
+ol > li:nth-child(odd) {
+    background-color: #f0f0f0; 
+
+ol > li:nth-child(even) {
+    background-color: #e0e0e0; 
 }
