@@ -14,25 +14,27 @@
     </header>
     <main>
         <form action="/submit" method="POST">
-            <!-- Группа: Личная информация -->
-            <fieldset>
-                <legend>Личная информация</legend>
+            <div class="form-group">
+                <h2>Личная информация</h2>
                 <label for="name">Имя:</label>
                 <input type="text" id="name" name="name" placeholder="Введите ваше имя" required>
-    
+            
                 <label for="birthdate">Дата рождения:</label>
                 <input type="date" id="birthdate" name="birthdate" required>
-    
+            
                 <label>Пол:</label>
-                <input type="radio" id="male" name="gender" value="male" required>
-                <label for="male">Мужской</label>
-                <input type="radio" id="female" name="gender" value="female" required>
-                <label for="female">Женский</label>
-            </fieldset>
-    
-            <!-- Группа: Контактные данные -->
-            <fieldset>
-                <legend>Контактные данные</legend>
+                <div class="radio-group">
+                    <label for="male">Мужской</label>
+                    <input type="radio" id="male" name="gender" value="male" required>
+                </div>
+                <div class="radio-group">
+                    <label for="female">Женский</label>
+                    <input type="radio" id="female" name="gender" value="female" required>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <h2>Контактные данные</h2>
                 <label for="email">Email:</label>
                 <input type="email" id="email" name="email" placeholder="example@example.com" required>
     
@@ -49,17 +51,10 @@
                     <option value="evening">Вечер</option>
                     <option value="night">Ночь</option>
                 </select>
-            </fieldset>
+            </div>
     
-            <!-- Кнопки -->
-            <button type="submit">
-                <span>Зарегистрироваться</span>
-                <!-- <img src="icons/submit.png" alt="Submit Icon"> -->
-            </button>
-            <button type="reset">
-                <span>Очистить форму</span>
-                <!-- <img src="icons/reset.png" alt="Reset Icon"> -->
-            </button>
+            <button type="submit">Зарегистрироваться</button>
+            <button type="reset">Очистить форму</button>
         </form>
     </main>
     <footer>
